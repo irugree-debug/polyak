@@ -28,7 +28,7 @@
 	stroke-width: 0.9vw;
 	fill: none;
 	filter: drop-shadow( 0 0 3px rgba(42, 254, 183, 0.5));
-	transition: stroke-dasharray .3s ease;
+	transition: stroke-dasharray .5s ease-out;
 }
 .speedometer .numbers{
 	position: absolute;
