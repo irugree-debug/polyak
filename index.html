@@ -149,10 +149,10 @@
 			<div class="speedometer">
 				<svg class="scale">
 					<defs>
-						<lineargradient id="gradient" gradientTransform="rotate(45)">
-							<stop offset="0%" style="stop-color:#9bfffe"/>
-							<stop offset="100%" style="stop-color:#2ac08b"/>
-						</lineargradient>
+					<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:#00d2ff; stop-opacity:1" /> 
+						<stop offset="100%" style="stop-color:#3a7bd5; stop-opacity:1" />
+					</linearGradient>
 					</defs>
 					<circle class="empty"/>
 					<circle id="speed_circle" class="full" style="stroke-dasharray: 0 400;"/>
@@ -1413,20 +1413,9 @@ function translite(word){
     let speedText = document.getElementById('text_speed');
     if(speedText) speedText.innerText = speed;
     setSpeedCircle(speed);
-});
-	cef.on("interface:update:speed", (speed) => {
-    // Обновляем текст скорости
-    let speedText = document.getElementById('text_speed');
-    if(speedText) speedText.innerText = speed;
-
-    // Обновляем круговую шкалу
-    let circle = document.getElementById('speed-circle');
-    if (circle) {
-        // Длина круга 440, макс скорость 200
-        let offset = 440 - (speed * 440 / 200);
-        if (offset < 0) offset = 0;
-        circle.style.strokeDashoffset = offset;
-    }
+	
+	
+	
 });
 </script>
 </div></body></html>
