@@ -1414,5 +1414,19 @@ function translite(word){
     if(speedText) speedText.innerText = speed;
     setSpeedCircle(speed);
 });
+	cef.on("interface:update:speed", (speed) => {
+    // Обновляем текст скорости
+    let speedText = document.getElementById('text_speed');
+    if(speedText) speedText.innerText = speed;
+
+    // Обновляем круговую шкалу
+    let circle = document.getElementById('speed-circle');
+    if (circle) {
+        // Длина круга 440, макс скорость 200
+        let offset = 440 - (speed * 440 / 200);
+        if (offset < 0) offset = 0;
+        circle.style.strokeDashoffset = offset;
+    }
+});
 </script>
 </div></body></html>
