@@ -1,0 +1,98 @@
+@font-face {
+    font-family: bold;
+    src: url(../MYRIADPRO-BOLD.OTF);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../MYRIADPRO-REGULAR.OTF);
+}
+
+#mvd .bg{
+    transform: translate(50%, 80%);
+    width: 50%;
+    z-index: -1;
+}
+
+#mvd .avatar{
+    position: absolute;
+	width: 8.75%;
+    left: 25.75%;
+    transform: translate(0%, 0%);
+}
+
+#mvd .left-div{
+    margin-left: 30vw;
+    z-index: 1;
+}
+
+#mvd .right-div{
+    z-index: 1;
+    margin-left: 23vw;
+}
+
+#mvd .number-udost{
+    position: absolute;
+    margin-left: 11vw;
+    top: 24.8vw;
+    font-family: regular;
+    font-size: 1.15vw;
+}
+
+#mvd .position{
+    margin-top: 10vw;
+}
+
+#mvd .number{
+    font-size: 0.99vw;
+    font-family: regular;
+
+    position: absolute;
+    top: 27.35vw;
+    margin-left: 3.8vw;
+}
+
+#mvd .date{
+    position: absolute;
+    font-size: 0.83vw;
+    font-family: regular;
+
+    margin-left: 10.5vw;
+    top: 27.5vw;
+}
+
+#mvd .second-number{
+    position: absolute;
+    top: 16.9vw;
+    margin-left: 14.5vw;
+    font-family: bold;
+    font-size: 0.94vw;
+}
+
+#mvd .name-div{
+    text-align: center;
+    font-size: 1.04vw;
+    font-family: bold;
+
+    position: absolute;
+    top: 18vw;
+    margin-left: 6.5vw;
+}
+
+#mvd .rang{
+    position: absolute;
+    font-size: 0.83vw;
+    font-family: regular;
+
+    top: 22.2vw;
+    margin-left: 3vw;
+}
+
+#mvd .two-rang{
+    position: absolute;
+    font-size: 0.83vw;
+    font-family: regular;
+
+    top: 23.2vw;
+    margin-left: 3vw;
+}

@@ -1,0 +1,43 @@
+#money{
+	margin-top: 1.55vw;
+	width: 74%;
+	height: 4.6vw;
+	margin-right: 0;
+	margin-left: auto;
+	background: linear-gradient(90deg, rgba(50, 69, 61, 0.7), rgba(17, 123, 72, 0.7));
+	transform: translate(-1.6vw, 0) skew(165deg);
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2.5% 5%;
+	box-sizing: border-box;
+}
+#money::before{
+	content: "";
+	display: block;
+	width: 3px;
+	height: 100%;
+	background-color: #00dc7d;
+	box-shadow: 0 0 5px #00dc7d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#money .row{
+	width: 100%;
+	transform: skew(15deg);
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+#money .row .icon{
+	width: 1.6vw;
+	margin-right: 12%;
+}
+#money .row .text{
+	display: block;
+	font-family: Montserrat;
+	font-size: 0.95vw;
+	font-weight: 800;
+	color: white;
+	width: auto;
+}

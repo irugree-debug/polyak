@@ -1,0 +1,51 @@
+#date{
+	width: 12.24vw;
+	height: 1.2vw;
+	display: flex;
+	padding: 0.8vw 0;
+	align-items: center;
+	box-sizing: border-box;
+}
+#date .time{
+	width: auto;
+	display: flex;
+	align-items: center;
+	margin-right: 1.4vw;
+}
+#date .time .icon{
+	width: 1.1vw;
+	height: 1.1vw;
+	margin-right: 0.5vw;
+}
+#date .time .icon img{
+	width: 1.1vw;
+	height: 1.1vw;
+}
+#date .time span{
+	display: block;
+	font-family: Montserrat;
+	font-size: 0.9vw;
+	font-weight: 600;
+	color: white;
+}
+#date .date{
+	width: auto;
+	display: flex;
+	align-items: center;
+}
+#date .date .icon{
+	width: 1.2vw;
+	height: 1.2vw;
+	margin-right: 0.5vw;
+}
+#date .date .icon img{
+	width: 1.2vw;
+	height: 1.2vw;
+}
+#date .date span{
+	display: block;
+	font-family: Montserrat;
+	font-size: 0.9vw;
+	font-weight: 600;
+	color: white;
+}

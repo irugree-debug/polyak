@@ -1,0 +1,118 @@
+@font-face {
+    font-family: regular;
+    src: url(../fonts/Bitter-Regular.ttf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(../fonts/Bitter-Bold.ttf);
+}
+
+.prokuror-bg{
+    transform: translate(50%, 80%);
+    width: 50%;
+    z-index: -1;
+}
+
+.prokuror-content{
+    width: 100%;
+}
+
+.prokuror-avatar{
+    position: absolute;
+	width: 7.5%;
+    left: 26.55%;
+    transform: translate(0%, 9.3%);
+}
+
+.dopusk{
+    font-family: bold;
+    font-size: 0.63vw;
+    color: black;
+
+    position: absolute;
+    top: 26.6vw;
+    margin-left: 29vw;
+}
+
+.prokuror-name {
+    font-family: bold;
+    font-size: 1.2vw;
+    position: absolute;
+    width: 20vw;
+    top: 19.1vw;
+    right: 27vw;
+    text-align: center;
+    line-height: 1.2vw;
+    white-space: nowrap;
+}
+
+#prokuror-name1 {
+    text-transform: uppercase;
+}
+
+#prokuror-name2, #prokuror-name3 {
+    font-family: regular;
+}
+
+.prokuror-number{
+    font-family: bold;
+    font-size: 0.94vw;
+    color: black;
+
+    position: absolute;
+    top: 27.7vw;
+    margin-left: 26.6vw;
+}
+
+.prokuror-left{
+    transform: rotate(-90deg);
+
+    padding-left: 42.7vw;
+    padding-top: 44.7vw;
+}
+
+.prokuror-right{
+    z-index: 1;
+
+    margin-left: 5vw;
+}
+
+.first-date-prokuror{
+    font-family: bold;
+    font-size: 0.63vw;
+    padding-top: 0.6vw;
+    white-space: nowrap;
+}
+.two-date-prokuror{
+    font-family: bold;
+    font-size: 0.63vw;
+    
+    position: absolute;
+    padding-top: 0.3vw;
+    white-space: nowrap;
+}
+
+.year{
+    margin-left: 1.6vw;
+}
+
+.prokuror-number-right{
+    font-family: bold;
+    font-size: 0.94vw;
+    color: black;
+
+    position: absolute;
+    top: 17.85vw;
+    margin-left: 14vw;
+}
+
+.prokuror-rang{
+    font-family: bold;
+    font-size: 0.63vw;
+    color: black;
+
+    position: absolute;
+    top: 21.5vw;
+    margin-left: 7vw;
+}

@@ -1,0 +1,158 @@
+.transmission{
+	width: 7vw;
+	display: flex;
+	justify-content: flex-end;
+}
+.transmission .manual{
+	width: 7vw;
+	height: 6.25vw;
+	background-color: rgba(19, 19, 23, 0.4);
+	border: 2px solid rgba(19, 19, 23, 0.65);
+	border-radius: 1.4vw;
+	box-sizing: border-box;
+	position: relative;
+	background-image: url("../images/manual-transmission-blur.png"), url(../images/manual-transmission-flash.png);
+	background-size: 100% 100%, 100% 100%;
+	background-position: center, center;
+}
+.transmission .manual .box{
+	width: 5.2vw;
+	height: 5vw;
+	background-image: url("../images/manual-transmission-path.png");
+	background-size: 100% 100%;
+	background-position: center;
+	box-sizing: border-box;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.transmission .manual .box .gears{
+	width: 5.2vw;
+	height: 5vw;
+	box-sizing: border-box;
+}
+.transmission .manual .box .gears .gear{
+	width: 1.2vw;
+	height: 1.2vw;
+	background-color: rgba(19, 19, 23, 0.5);
+	position: absolute;
+	border-radius: 50%;
+	list-style: none;
+	text-align: center;
+	display: block;
+	font-family: Montserrat;
+	font-size: 0.65vw;
+	line-height: 1.15vw;
+	color: white;
+	box-sizing: border-box;
+}
+.transmission .manual .box .gears .gear.active.lime{
+	border: 2px solid #00dc7d;
+}
+.transmission .manual .box .gears .gear.active.red{
+	border: 2px solid #f85c50;
+}
+.transmission .manual .box .gears .gear.active.yellow{
+	border: 2px solid #ffc11e;
+}
+.transmission .manual .box .gears .gear:nth-child(1){
+	top: 0;
+	left: 0;
+}
+.transmission .manual .box .gears .gear:nth-child(2){
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.transmission .manual .box .gears .gear:nth-child(3){
+	top: 0;
+	right: 0;
+}
+.transmission .manual .box .gears .gear:nth-child(4){
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.transmission .manual .box .gears .gear:nth-child(5){
+	bottom: 0;
+	left: 0;
+}
+.transmission .manual .box .gears .gear:nth-child(6){
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.transmission .manual .box .gears .gear:nth-child(7){
+	bottom: 0;
+	right: 0;
+}
+
+.transmission .automatic{
+	width: 3.39vw;
+	height: 7.29vw;
+	background-color: rgba(19, 19, 23, 0.4);
+	border: 2px solid rgba(19, 19, 23, 0.65);
+	border-radius: 1.2vw;
+	box-sizing: border-box;
+	position: relative;
+	background-image: url("../images/automatic-transmission-blur.png");
+	background-size: 100% 100%;
+	background-position: center;
+}
+.transmission .automatic .box{
+	width: 1.7vw;
+	height: 6vw;
+	background-image: url("../images/automatic-transmission-path.png");
+	background-size: 100% 100%;
+	background-position: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.transmission .automatic .box .gears{
+	width: 1.7vw;
+	height: 6vw;
+	box-sizing: border-box;
+}
+.transmission .automatic .box .gears .gear{
+	width: 1.7vw;
+	height: 1.7vw;
+	background-color: rgba(19, 19, 23, 0.5);
+	position: absolute;
+	border-radius: 50%;
+	list-style: none;
+	text-align: center;
+	display: block;
+	font-family: Montserrat;
+	font-size: 0.7vw;
+	line-height: 1.65vw;
+	color: white;
+	box-sizing: border-box;
+}
+.transmission .automatic .box .gears .gear.active.lime{
+	border: 2px solid #00dc7d;
+}
+.transmission .automatic .box .gears .gear.active.red{
+	border: 2px solid #f85c50;
+}
+.transmission .automatic .box .gears .gear.active.yellow{
+	border: 2px solid #ffc11e;
+}
+.transmission .automatic .box .gears .gear:nth-child(1){
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.transmission .automatic .box .gears .gear:nth-child(2){
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.transmission .automatic .box .gears .gear:nth-child(3){
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}

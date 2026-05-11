@@ -1,0 +1,97 @@
+#medical .bg{
+	width: 100%;
+}
+#medical .content{
+	width: 100%;
+}
+#medical .content .avatar{
+	position: absolute;
+	top: 8%;
+	right: 19%;
+	width: 23%;
+}
+#medical .content .givenbyfirst{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 33%;
+	left: 52%;
+}
+#medical .content .givenbysecond{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 36.5%;
+	left: 10%;
+}
+#medical .content .sign-1{
+	width: 10%;
+	position: absolute;
+	top: 40.5%;
+	left: 38%;
+}
+
+#medical .content .givendate{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 44.5%;
+	left: 24%;
+}
+#medical .content .surname{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 59%;
+	left: 23%;
+}
+#medical .content .name{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 63%;
+	left: 29%;
+}
+#medical .content .birthdate{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 66.8%;
+	left: 28.5%;
+}
+#medical .content .address{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 70.7%;
+	left: 30%;
+}
+#medical .content .position{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 79%;
+	left: 24%;
+}
+#medical .content .org{
+	font-family: Bitter;
+	font-size: min(1vw, 26px);
+	font-weight: 500;
+	position: absolute;
+	top: 82.5%;
+	left: 63%;
+}
+#medical .content .sign-2{
+	width: 10%;
+	position: absolute;
+	top: 77%;
+	left: 75%;
+}

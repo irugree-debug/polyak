@@ -1,0 +1,121 @@
+@font-face {
+    font-family: regular;
+    src: url(../MYRIADPRO-REGULAR.OTF);
+} 
+
+@font-face {
+    font-family: bold;
+    src: url(../MYRIADPRO-BOLD.OTF);
+}
+
+@font-face {
+    font-family: italic;
+    src: url(../MYRIADPRO-BOLDIT.OTF);
+}
+
+
+
+
+.mdiv{
+    transform: translate(50%, 80%);
+    width: 50%;
+    z-index: -1;
+}
+
+.m-content{
+    width: 100%;
+}
+
+.m-photo{
+    position: absolute;
+	width: 7.4%;
+    left: 26.65%;
+    transform: translate(0%, 6%);
+}
+
+.all-divs{display: flex; flex-direction: row;}
+
+.m-left{
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 31vw;
+    z-index: 1;
+}
+
+.m-right{
+    z-index: 1;
+
+    margin-left: 21vw;
+    font-size: 1vw;
+}
+
+.m-number-udost{
+    font-size: 0.938vw;
+    z-index: 1;
+    position: absolute;
+    top: 27.65vw;
+    font-family: regular;
+    color: #303030;
+}
+
+.m-number-udost-r{
+    position: absolute;
+    top: 17vw;
+    margin-left: 13.5vw;
+    color: #26405c;
+    font-family: bold;
+    font-size: 0.938vw;
+}
+
+.m-nickname{
+    position: absolute;
+    top: 19.5vw;
+    line-height: 0.938vw;
+    margin-left: 7vw;
+    text-align: center;
+    font-family: bold;
+    color: black;
+    font-size: 0.938vw;
+}
+
+.m-rang{
+    position: absolute;
+    top: 23vw;
+    font-family: italic;
+    font-size: 0.833vw;
+}
+
+.m-date{    
+    margin-left: 7.5vw;
+    position: absolute;
+    top: 27.5vw;
+    z-index: 1;
+    color: #303030;
+    font-family: regular;
+    font-size: 0.729vw;
+}
+
+.m-mount{
+    margin-left: 1.4vw;
+}
+
+.m-year{
+    margin-left: 1.5vw;
+}
+
+.m-date-r{
+    position: absolute;
+    top: 27.6vw;
+    margin-left: 0.7vw;
+    font-size: 0.938vw;
+    font-family: regular;
+    color: black;
+}
+
+.m-mount-r{
+    margin-left: 2.3vw;
+}
+.m-year-r{
+    margin-left: 2.2vw;
+}

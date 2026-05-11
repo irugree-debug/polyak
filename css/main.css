@@ -1,0 +1,103 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+body{
+	overflow: hidden;
+}
+img{
+	width: 100%;
+}
+.wrapper{
+	width: 100vw;
+	height: 100vh;
+	/*background-image: url("../img/background.png");*/
+	background-size: cover;
+	background-position: center;
+}
+
+#top{
+	position: absolute;
+	top: 1.7vw;
+	right: 3vw;
+	width: 21.3vw;
+	max-width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	/*opacity: 0.5;*/
+}
+#bottom{
+	position: absolute;
+	bottom: 0.5vw;
+	left: 4.9vw;
+	width: 24vw;
+	max-width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#car{
+	position: absolute;
+	bottom: 2vw;
+	right: 4vw;
+	width: 25vw;
+	max-width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+#train{
+	position: absolute;
+	bottom: 2vw;
+	right: 4vw;
+	width: 17.45vw;
+	max-width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+#udostoverenie{
+	width: 50%;
+	max-width: 1200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#passport{
+	width: 30%;
+	max-width: 900px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#medical{
+	width: 30%;
+	max-width: 900px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#vu{
+	width: 30%;
+	max-width: 900px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#sk{
+	width: 57%;
+	max-width: 1150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

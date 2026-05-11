@@ -1,0 +1,93 @@
+@font-face {
+    font-family: ArialBold;
+    src: url(../fonts/arial_bolditalicmt.ttf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(../MYRIADPRO-BOLD.OTF);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../MYRIADPRO-REGULAR.OTF);
+}
+
+.sudbg{
+    transform: translate(50%, 80%);
+    width: 50%;
+    z-index: -1;
+}
+
+.sud-content{
+    width: 100%;
+}
+
+.sud-avatar{
+    position: absolute;
+	width: 7.5%;
+    left: 25.55%;
+    transform: translate(0%, 52.5%);
+}
+
+.sud-left{
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 31vw;
+    z-index: 1;
+}
+
+.sud-right{
+    z-index: 1;
+
+    margin-left: 21vw;
+    font-size: 1vw;
+}
+
+.sudDate{
+    font-family: ArialBold;
+    font-size: 0.73vw;
+    color: #30284e;
+    position: absolute;
+    top: 26.6vw;
+    margin-left: 10.7vw;
+}
+
+.sud-number{
+    font-family: regular;
+    font-size: 1.46vw;
+    color: black;
+
+    position: absolute;
+    top: 16.2vw;
+    margin-left: 15.2vw;
+}
+
+.sud-family{
+    font-family: Bold;
+    font-size: 1.25vw;
+    color: black;
+    position: absolute;
+    top: 17.8vw;
+    margin-left: 8.5vw;
+}
+
+.sud-name{
+    font-family: Bold;
+    font-size: 1.25vw;
+    color: black;
+    position: absolute;
+    top: 19.5vw;
+    margin-left: 5.7vw;
+}
+
+.sud-rang{
+    font-family: regular;
+    font-size: 0.94vw;
+    color: black;
+
+    position: absolute;
+    top: 21.5vw;
+    margin-left: 4.8vw;
+}

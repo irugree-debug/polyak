@@ -1,0 +1,89 @@
+#vu .bg{
+	width: 100%;
+}
+#vu .content{
+	width: 100%;
+	font-family: Arial;
+	font-weight: 700;
+	font-size: min(24px, 0.8vw);
+}
+#vu .content .translate{
+	font-weight: normal;
+	font-size: min(23px, 0.75vw);
+	transform: translate(0, 100%);
+}
+#vu .content .surname{
+	position: absolute;
+	top: 20%;
+	left: 44%;
+}
+#vu .content .name{
+	position: absolute;
+	top: 30%;
+	left: 44%;
+}
+#vu .content .borndate{
+	position: absolute;
+	top: 39.5%;
+	left: 44%;
+}
+#vu .content .bornplace{
+	position: absolute;
+	top: 43.5%;
+	left: 44%;
+}
+#vu .content .from{
+	position: absolute;
+	top: 53%;
+	left: 44%;
+}
+#vu .content .to{
+	position: absolute;
+	top: 53%;
+	left: 73%;
+}
+#vu .content .place{
+	position: absolute;
+	top: 59%;
+	left: 44%;
+}
+#vu .content .number{
+	position: absolute;
+	top: 68%;
+	left: 44%;
+}
+#vu .content .obl{
+	position: absolute;
+	top: 73%;
+	left: 44%;
+}
+#vu .content .categories{
+	position: absolute;
+	top: 83%;
+	left: 44%;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 70%;
+}
+#vu .content .categories .category{
+	line-height: 1;
+	padding: min(5px, 0.2vw) min(15px, 0.5vw);
+	box-sizing: border-box;
+	border: 1px solid black;
+	margin-right: min(15px, 0.5vw);
+	margin-bottom: min(5px, 0.2vw);
+	list-style: none;
+}
+#vu .content .photo{
+	position: absolute;
+	width: 25%;
+	top: 37%;
+	left: 4.7%;
+	border-radius: 15px;
+}
+#vu .content .sign{
+	position: absolute;
+	width: 10%;
+	left: 15%;
+	bottom: 7%;
+}

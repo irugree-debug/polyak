@@ -1,0 +1,12 @@
+#map{
+	width: 12.24vw;
+	margin-right: 11vw;
+	/* background-color: black; */
+	margin-top: 0.4vw;
+	position: relative;
+}
+#map img{
+	margin-bottom: -4px;
+	position: relative;
+	z-index: 1;
+}

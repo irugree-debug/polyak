@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Bitter Regular';
+    src: url(../fonts/Bitter-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Bitter Bold';
+    src: url(../fonts/Bitter-Bold.ttf);
+}
+
+#government {
+    position: relative;
+    width: 50vw;
+    height: 20vw;
+    background-image: url('../images/bg_3.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10vw 25vw;
+}
+
+#government-photo {
+    position: absolute;
+    width: 8vw;
+    height: 10vw;
+    top: 5vw;
+    left: 13vw;
+}
+
+.government-info {
+    position: absolute;
+    width: 25vw;
+    height: 10vw;
+    top: 4vw;
+    right: 0vw;
+    font-family: 'Bitter Bold';
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+#government-number {
+    font-size: 1.1vw;
+}
+
+#government-lastname {
+    text-transform: uppercase;
+}
+
+#government-rank {
+    font-family: 'Bitter Bold';
+    color: #222;
+    font-size: 0.9vw;
+}

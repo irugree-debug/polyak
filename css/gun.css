@@ -1,0 +1,24 @@
+#gun{
+	width: 52%;
+	margin-top: 1.4vw;
+	background-color: rgba(0, 0, 0, 0.4);
+	transform: skew(165deg);
+}
+#gun img{
+	position: absolute;
+	top: 2.5vw;
+	left: 50%;
+	transform: translate(-50%, -50%) skew(15deg);
+	width: 11vw;
+}
+#gun .ammo{
+	display: block;
+	font-family: Montserrat;
+	font-weight: 600;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	font-size: 0.9vw;
+	transform: translate(-50%, -50%) skew(15deg);
+}

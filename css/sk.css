@@ -1,0 +1,111 @@
+#sk .bg{
+	width: 100%;
+}
+#sk .content .avatar{
+	width: 15%;
+	position: absolute;
+	top: 13%;
+	left: 2.5%;
+}
+#sk .content .personal-number{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: min(18px, 0.85vw);
+	position: absolute;
+	top: 77%;
+	left: 10%;
+	width: 9%;
+	text-align: center;
+}
+#sk .content .givenday{
+	position: absolute;
+	top: 69.5%;
+	left: 42.8%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 2.5%;
+	text-align: center;
+}
+#sk .content .givenmonth{
+	position: absolute;
+	top: 49%;
+	left: 39.7%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 8.5%;
+	text-align: center;
+}
+#sk .content .givenyear{
+	position: absolute;
+	top: 29%;
+	left: 43%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 2%;
+	text-align: center;
+}
+#sk .content .uptoday{
+	position: absolute;
+	top: 59%;
+	left: 44.2%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 2.5%;
+	text-align: center;
+}
+#sk .content .uptomonth{
+	position: absolute;
+	top: 39%;
+	left: 41%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 8.5%;
+	text-align: center;
+}
+#sk .content .uptoyear{
+	position: absolute;
+	top: 18.7%;
+	left: 44.2%;
+	font-size: min(18px, 0.85vw);
+	font-family: Arial;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	width: 2%;
+	text-align: center;
+}
+
+.sk-name {
+	position: absolute;
+	width: 20vw;
+	white-space: nowrap;
+	line-height: 1.2vw;
+	font-size: 1.2vw;
+	font-family: Arial;
+	font-weight: regular;
+	top: 7vw;
+	right: 4vw;
+	text-align: center;
+}
+
+#sk-name1 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#sk-name2, #sk-name3 {
+	font-size: 1.1vw;
+}
+
+#sk-rank {
+	font-size: 0.95vw;
+}

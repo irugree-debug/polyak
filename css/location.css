@@ -1,0 +1,24 @@
+#location{
+	width: auto;
+	height: 1.8vw;
+	margin-top: 0.7vw;
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0.5vw;
+	align-items: center;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+#location .city{
+	font-family: Montserrat;
+	font-size: 0.8vw;
+	color: white;
+	font-weight: 800;
+	margin-right: 0.8vw;
+}
+#location .address{
+	font-family: Montserrat;
+	font-size: 0.7vw;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.5);
+}

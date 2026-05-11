@@ -1,0 +1,68 @@
+.lever{
+	width: 4.06vw;
+	height: 4.64vw;
+	position: relative;
+	overflow: hidden;
+}
+.lever svg .stick{
+	transform-origin: 90% 120%;
+	transition: .4s ease;
+	transform: rotate(0deg);
+}
+.lever svg .stick .handle{
+	transition: .4s ease;
+	fill: #393942;
+}
+.lever svg .stick.back{
+	transform: rotate(-15deg);
+}
+.lever svg .stick.back .handle{
+	fill: #F85C50;
+}
+.lever svg .stick.forward{
+	transform: rotate(15deg);
+}
+.lever svg .stick.forward .handle{
+	fill: #00DC7D;
+}
+.train-speedometer{
+	width: 9vw;
+	height: 4.69vw;
+	background-color: rgba(0, 0, 0, 0.45);
+	border-radius: 0.78vw;
+	border: 2px solid rgba(0, 0, 0, 0.7);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.train-speedometer .speed{
+	text-align: center;
+	width: auto;
+	margin-left: 0.5vw;
+}
+.train-speedometer .speed h1{
+	font-family: Montserrat;
+	font-size: 2vw;
+	color: white;
+	margin-bottom: 0;
+	line-height: 1;
+}
+.train-speedometer .speed span{
+	font-family: Montserrat;
+	font-size: 0.8vw;
+	color: #61606e;
+	display: block;
+}
+.train-speedometer .light{
+	width: 1.5vw;
+	height: 1.5vw;
+	margin-right: 0.5vw;
+}
+.train-speedometer .light.active{
+	filter: drop-shadow(0 0 3px #00dc7d);
+}
+.train-speedometer .light.active svg g path{
+	fill: #00DD77;
+}
