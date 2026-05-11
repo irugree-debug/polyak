@@ -1,0 +1,1413 @@
+<!DOCTYPE html><html lang="ru"><head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GreentechHUD</title>
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/logo.css">
+	<link rel="stylesheet" href="css/bars.css">
+	<link rel="stylesheet" href="css/gun.css">
+	<link rel="stylesheet" href="css/money.css">
+	<link rel="stylesheet" href="css/location.css">
+	<link rel="stylesheet" href="css/map.css">
+	<link rel="stylesheet" href="css/date.css">
+	<link rel="stylesheet" href="css/weather.css">
+	<link rel="stylesheet" href="css/transmission.css">
+	<link rel="stylesheet" href="css/speedometer.css">
+	<link rel="stylesheet" href="css/train.css">
+	<link rel="stylesheet" href="css/passport.css">
+	<link rel="stylesheet" href="css/medical.css">
+	<link rel="stylesheet" href="css/vu.css">
+	<link rel="stylesheet" href="css/sk.css">
+	<link rel="stylesheet" href="css/mchs.css">
+	<link rel="stylesheet" href="css/sud.css">
+	<link rel="stylesheet" href="css/prokuror.css">
+	<link rel="stylesheet" href="css/mvd.css">
+	<link rel="stylesheet" href="css/government.css">
+
+	<!-- colorpicker -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="css/spectrum.css">
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <script src="js/spectrum.js"></script>
+	<!-- -->
+	
+</head>
+<body>
+	<div class="wrapper">
+		<div id="top">
+			<div id="logo">
+				<img src="images/logo.png" alt="logo">
+			</div>
+			<div id="bars" style="display;" hidden>
+				<div class="long">
+					<div id="text_health" class="text text_white">0</div>
+					<span id="progress_health" class="progress progress_red" style="width: calc(0% - 0.4vw);"></span>
+				</div>
+				<div class="long">
+					<div id="text_armour" class="text text_black">0</div>
+					<span id="progress_armour" class="progress progress_white" style="width: calc(0% - 0.4vw);"></span>
+				</div>
+				<div id="need_food" class="short short_low">
+					<div class="icon">
+						<img src="images/food.png" alt="food">
+					</div>
+					<div id="text_food" class="text">0</div>
+				</div>
+				<div id="need_drink" class="short short_low">
+					<div class="icon">
+						<img src="images/drink.png" alt="drink">
+					</div>
+					<div id="text_drink" class="text">0</div>
+				</div>
+			</div>
+			<div id="gun" style="display;" hidden>
+				<img id="img_weapon" src="images/weapon_fist.png" alt="gun">
+				<span id="text_ammo" class="ammo"></span>
+			</div>
+			<div id="money" style="display:" hidden>
+				<div class="row">
+					<div class="icon">
+						<img src="images/cash.png" alt="cash">
+					</div>
+					<span id="text_cash" class="text">0 ₽</span>
+				</div>
+				<div class="row">
+					<div class="icon">
+						<img src="images/card.png" alt="card">
+					</div>
+					<span id="text_card" class="text">0 ₽</span>
+				</div>
+			</div>
+		</div>
+		<div id="bottom" style="display:" hidden>
+			<!-- <div id="location">
+				<div id="text_city" class="city">Арзамас</div>
+				<div id="text_street" class="address">Пер. Чемериського</div>
+			</div>
+			<div id="map">
+				<img src="img/map.png" alt="map">
+			</div>
+			<div id="date">
+				<div id="text_time" class="time">03:00</div>
+				<div class="divider"></div>
+				<div id="text_date" class="date">01.01.1970</div>
+			</div>
+			<div id="weather">
+				<div class="icon">
+					<img src="img/weather.png" alt="weather">
+				</div>
+				<div id="text_temp" class="temperature">+21°С</div>
+			</div> -->
+			<div id="date">
+				<div class="time">
+					<div class="icon">
+						<img src="fonts/clock.svg" alt="clock">
+					</div>
+					<span>15:36</span>
+				</div>
+				<div class="date">
+					<div class="icon">
+						<img src="fonts/calendar.svg" alt="calendar">
+					</div>
+					<span>06.09.2021</span>
+				</div>
+			</div>
+			<div id="map">
+				<img src="images/map.png" alt style="opacity: 0;">
+			</div>
+			<div id="location">
+				<div id="text_city" class="city">Polyakov DEV</div>
+				<div id="text_street" class="address">Polyakov DEVELOPER</div>
+			</div>
+		</div>
+		<div id="car" style="displa;" hidden>
+			<div class="transmission">
+				<div id="transmission_manual" class="manual" style="display: none;">
+					<div class="box">
+						<ul class="gears">
+							<li id="tm_gear_1" class="gear lime">1</li>
+							<li id="tm_gear_3" class="gear lime">3</li>
+							<li id="tm_gear_5" class="gear lime">5</li>
+							<li id="tm_gear_N" class="gear yellow">N</li>
+							<li id="tm_gear_2" class="gear lime">2</li>
+							<li id="tm_gear_4" class="gear lime">4</li>
+							<li id="tm_gear_R" class="gear red">R</li>
+						</ul>
+					</div>
+				</div>
+				<div id="transmission_automatic" class="automatic" style="display: none;">
+					<div class="box">
+						<ul class="gears">
+							<li id="ta_gear_R" class="gear red">R</li>
+							<li id="ta_gear_N" class="gear yellow">N</li>
+							<li id="ta_gear_D" class="gear lime">D</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="speedometer">
+				<svg class="scale">
+					<defs>
+						<lineargradient id="gradient" gradientTransform="rotate(45)">
+							<stop offset="0%" style="stop-color:#9bfffe"/>
+							<stop offset="100%" style="stop-color:#2ac08b"/>
+						</lineargradient>
+					</defs>
+					<circle class="empty"/>
+					<circle id="speed_circle" class="full" style="stroke-dasharray: 0 400;"/>
+				</svg>
+				<img src="images/speedometer-numbers.png" alt="numbers" class="numbers">
+				<div class="speed">
+					<h1 id="text_speed">0</h1>
+					<span>км/ч</span>
+				</div>
+				<div id="text_mileage" class="mileage">0 км</div>
+				<div class="turnsignals">
+					<svg height="512px" id="turn_signal_left" class="signal left" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<polygon points="448.5,256.5 256.5,64.5 256.5,176.5 64.5,176.5 64.5,336.5 256.5,336.5 256.5,448.5 "/>
+					</svg>
+					<svg height="512px" id="turn_signal_right" class="signal right" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<polygon points="448.5,256.5 256.5,64.5 256.5,176.5 64.5,176.5 64.5,336.5 256.5,336.5 256.5,448.5 "/>
+					</svg>
+				</div>
+				<div class="flags">
+					<svg class="flag" version="1.1" id="flag_lock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<path id="Замок" class="st1" d="M80,53.9v-8.6c0-4.5-3.7-8.3-8.3-8.3H56.3c-4.5,0-8.3,3.7-8.3,8.3v8.6c-4.1,1.7-7,5.8-7,10.5
+						v15.1C41,85.8,46.2,91,52.5,91h23.1C81.8,91,87,85.8,87,79.5V64.5C87,59.7,84.1,55.6,80,53.9z M66,76.1c0,0.5-0.4,0.9-0.8,0.9h-2.3
+						c-0.5,0-0.8-0.4-0.8-0.9v-8.3c0-0.5,0.4-0.8,0.8-0.8h2.3c0.5,0,0.8,0.4,0.8,0.8V76.1z M73,53H55v-6.2c0-1.6,1.3-2.8,2.8-2.8h12.3
+						c1.6,0,2.8,1.3,2.8,2.8V53z"/>
+					</svg>
+					<svg class="flag" version="1.1" id="flag_key" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 30 58 68" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<path id="Ключ" class="st2" d="M74.8,66.1h-3.9V52l-4.6-3v-2.3l3.4-1.1v-2.3L66.3,42l4.6-2.9L58.3,34v32.1h-5.1
+						c-4.8,0-8.7,3.9-8.7,8.7v12.4c0,4.8,3.9,8.7,8.7,8.7h21.6c4.8,0,8.7-3.9,8.7-8.7V74.9C83.5,70.1,79.6,66.1,74.8,66.1z M70.9,89.1
+						c0,0.6-0.5,1.1-1.1,1.1H58.3c-0.6,0-1.1-0.5-1.1-1.1v-2.3c0-0.6,0.5-1.1,1.1-1.1h11.5c0.6,0,1.1,0.5,1.1,1.1V89.1z"/>
+					</svg>
+					<svg class="flag" version="1.1" id="flag_light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<g id="Фары">
+							<path class="st4" d="M61,46H50c-6.6,0-12,5.4-12,12v12c0,6.6,5.4,12,12,12h11c1.7,0,3-1.4,3-3V49C64,47.3,62.7,46,61,46z"/>
+							<path class="st4" d="M87.2,62H70.8c-0.4,0-0.8,0.4-0.8,0.8v2.4c0,0.4,0.4,0.8,0.8,0.8h16.4c0.4,0,0.8-0.4,0.8-0.8v-2.4
+							C88,62.4,87.6,62,87.2,62z"/>
+							<path class="st4" d="M70.7,56.2l15-4c0.4-0.1,0.7-0.6,0.6-1l-0.7-2.6c-0.1-0.4-0.6-0.7-1-0.6l-15,4c-0.4,0.1-0.7,0.6-0.6,1l0.7,2.6
+							C69.8,56.1,70.2,56.3,70.7,56.2z"/>
+							<path class="st4" d="M85.7,75l-15-4c-0.4-0.1-0.9,0.1-1,0.6L69,74c-0.1,0.4,0.1,0.9,0.6,1l15,4c0.4,0.1,0.9-0.1,1-0.6l0.6-2.4
+							C86.4,75.6,86.1,75.2,85.7,75z"/>
+						</g>
+					</svg>
+					<svg class="flag" version="1.1" id="flag_belt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<g id="Ремень">
+							<path class="st6" d="M53.2,50.1h-9.4v-0.9c0-1-0.8-1.7-1.7-1.7h-3.5c-1,0-1.7,0.8-1.7,1.7v29.6c0,1,0.8,1.7,1.7,1.7h3.5
+							c1,0,1.7-0.8,1.7-1.7v-0.9h9.4c4.4,0,8-3.6,8-8V58.1C61.3,53.7,57.7,50.1,53.2,50.1z M55.2,69.2c0,1.4-1.2,2.6-2.6,2.6h-5.2V56.2
+							h5.2c1.4,0,2.6,1.2,2.6,2.6V69.2z"/>
+							<path class="st6" d="M85.5,44H69.2c-2,0-3.6,1.6-3.6,3.6v32.9c0,2,1.6,3.6,3.6,3.6h16.3c2,0,3.6-1.6,3.6-3.6V47.6
+							C89.1,45.6,87.5,44,85.5,44z"/>
+						</g>
+					</svg>
+					<svg class="flag" version="1.1" id="flag_engine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<polygon id="Двигатель" class="st3" points="89.3,55.3 89.3,62.5 85,62.5 72.9,51.8 55,51.8 55,47.5 62.1,47.5 62.1,41.8 
+						36.4,41.8 36.4,47.5 43.6,47.5 43.6,51.8 35,59.6 35,79.6 56.4,79.6 65,86.8 85,86.8 85,73.9 89.3,73.9 89.3,81 95,81 95,55.3 "/>
+					</svg>
+				</div>
+				<div class="fuel">
+					<svg version="1.1" id="fuel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<g id="fuel_icon">
+							<path class="st8" d="M78.5,75.8c3,0,4-8.8,4-8.8v-2.5"/>
+							<rect x="79" y="62" class="st8" width="1" height="1"/>
+							<path class="st8" d="M83.6,58h-2.3c-0.8,0-1.4,0.6-1.4,1.4v6.3c0,0.8,0.6,1.4,1.4,1.4h2.3c0.8,0,1.4-0.6,1.4-1.4v-6.3
+							C85,58.6,84.4,58,83.6,58z"/>
+							<path class="st8" d="M77,37H51c-1.1,0-2,0.9-2,2v50c0,1.1,0.9,2,2,2h26c1.1,0,2-0.9,2-2V39C79,37.9,78.1,37,77,37z"/>
+							<path class="st8" d="M79,60H49v29c0,1.1,0.9,2,2,2h26c1.1,0,2-0.9,2-2V60z"/>
+							<path d="M72.9,56H55.1c-0.6,0-1.1-0.5-1.1-1.1V43.1c0-0.6,0.5-1.1,1.1-1.1h17.8c0.6,0,1.1,0.5,1.1,1.1v11.8
+							C74,55.5,73.5,56,72.9,56z"/>
+							<path class="st8" d="M73,64h-2c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1v-4C74,64.4,73.6,64,73,64z"/>
+						</g>
+					</svg>
+					<span id="text_fuel">0.0</span>
+				</div>
+			</div>
+		</div>
+		<div id="train" style="display: none;">
+			<div class="lever">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="150 100 330 400" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+					<style type="text/css">
+						.st2{display:inline;}
+						.st3{fill:#61606E;}
+						.st4{fill:#393942;}
+						.st5{display:inline;fill:#393942;}
+					</style>
+					<g id="process">
+						<g id="train_transmission" class="st2 stick">
+							<rect x="287.39" y="201.37" class="st3" width="34.16" height="256.63"/>
+							<path class="st4 handle" d="M323.53,135.26c0,3.07,2.04,5.81,5.24,7.59c-3.19,1.78-5.24,4.52-5.24,7.59c0,3.07,2.04,5.81,5.24,7.59
+							c-3.19,1.78-5.24,4.52-5.24,7.59c0,3.07,2.04,5.81,5.24,7.59c-3.19,1.78-5.24,4.52-5.24,7.59c0,5.02,5.45,9.16,12.47,9.69v3.32
+							c0,4.17-4.91,7.59-10.91,7.59h-35.84c-6,0-10.91-3.41-10.91-7.59L269,122.26c0-4.17,4.91-7.59,10.91-7.59h45.19
+							c6,0,10.91,3.41,10.91,7.59v3.32C328.99,126.1,323.53,130.24,323.53,135.26z"/>
+							<path class="st3" d="M316.31,106h-23.69c-2.17,0-3.92,1.76-3.92,3.92v4.75h31.53v-4.75C320.24,107.76,318.48,106,316.31,106z"/>
+						</g>
+						<path id="Основание_2_" class="st5" d="M464,494H144c0-26.13,33.39-48.35,80-56.58c12.51-2.22,25.97-3.42,40-3.42h80 c14.03,0,27.49,1.2,40,3.42C430.61,445.65,464,467.87,464,494z"/>
+					</g>
+				</svg>
+			</div>
+			<div class="train-speedometer">
+				<div class="speed">
+					<h1 id="train-speed">112</h1>
+					<span>км/ч</span>
+				</div>
+				<div class="light" id="flag_tlight">
+					<svg class="flag" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="35 35 58 58" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+						<g id="Фары">
+							<path class="st4" d="M61,46H50c-6.6,0-12,5.4-12,12v12c0,6.6,5.4,12,12,12h11c1.7,0,3-1.4,3-3V49C64,47.3,62.7,46,61,46z"/>
+							<path class="st4" d="M87.2,62H70.8c-0.4,0-0.8,0.4-0.8,0.8v2.4c0,0.4,0.4,0.8,0.8,0.8h16.4c0.4,0,0.8-0.4,0.8-0.8v-2.4
+							C88,62.4,87.6,62,87.2,62z"/>
+							<path class="st4" d="M70.7,56.2l15-4c0.4-0.1,0.7-0.6,0.6-1l-0.7-2.6c-0.1-0.4-0.6-0.7-1-0.6l-15,4c-0.4,0.1-0.7,0.6-0.6,1l0.7,2.6
+							C69.8,56.1,70.2,56.3,70.7,56.2z"/>
+							<path class="st4" d="M85.7,75l-15-4c-0.4-0.1-0.9,0.1-1,0.6L69,74c-0.1,0.4,0.1,0.9,0.6,1l15,4c0.4,0.1,0.9-0.1,1-0.6l0.6-2.4
+							C86.4,75.6,86.1,75.2,85.7,75z"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div id="passport" style="display: none;">
+			<img src="images/background_1.png" alt class="bg">
+			<div class="content">
+				<div class="top">
+					<div class="givenby">ОТДЕЛОМ УФМС РОССИИ ПО НИЖЕГОРОДСКОЙ ОБЛАСТИ ГОРОДА ЮЖНЫЙ</div>
+					<div class="givendate">04.04.2000</div>
+					<div class="subdivision-code">660-112</div>
+					<div class="personal-code">1234</div>
+					<img src="images/sign.png" class="sign">
+					<img src="images/personal-sign.png" class="personal-sign">
+					<div class="id">86    53    842521</div>
+				</div>
+				<div class="bottom">
+					<div class="surname" id="surname">ЗУБЕНКО</div>
+					<div class="name" id="name">МИХАИЛ</div>
+					<div class="patronymic" id="patronymic">ПЕТРОВИЧ</div>
+					<div class="sex" id="sex">МУЖ.</div>
+					<div class="birthdate" id="birthdate">01.01.1970</div>
+					<div class="birthplace">Г. ЮЖНЫЙ<br>НИЖЕГОРОДСКАЯ ОБЛАСТЬ<br>РОССИЯ</div>
+					<div class="meta">PNRUS<<<span id="translatePassport">ZUBENKOMICHAELPETROVICH</span><<<<<<<<<<<5364347594rus752364<<< div>
+					<img id="avatar" src="images/avatar.png" alt="avatar" class="avatar">
+					<div class="id">86    53    842521</div>
+				</5364347594rus752364<<<></div>
+			</div>
+		</div>
+		<!-- 
+			medavatar
+			medavatar
+			meddata
+			medsurname
+			medname
+			medbirthdate
+			medaddress
+			meddolsh
+			medorg
+		-->
+		<div id="medical" style="display: none;">
+			<img src="images/background_2.png" alt="background" class="bg">
+			<div class="content">
+				<img id="medavatar" src="images/avatar_1.png" alt="avatar" class="avatar">
+				<div class="givenbyfirst">ФБУЗ НО "ОКБ №1</div>
+				<div class="givenbysecond">им. В.П. Демихова — ЦЭМП"</div>
+				<img src="images/sign-1.png" alt="sign-1" class="sign-1">
+				<div id="meddata" class="givendate">07.11.2021</div>
+				<div id="medsurname" class="surname">Зубенко</div>
+				<div id="medname" class="name">Михаил Петрович</div>
+				<div id="medbirthdate" class="birthdate">01.01.1970</div>
+				<div id="medaddress" class="address">г. Южный, ул. Курчатова 78Б</div>
+				<div id="meddolsh" class="position">-</div>
+				<div id="medorg" class="org">-</div>
+				<img src="images/sign-2.png" alt="sign-2" class="sign-2">
+			</div>
+		</div>
+
+		<!-- mvdavatar, mvdnumberudost, mvdnumber, mvddaym mvdmonth, mvdyear, mvdfamily, mvdname, mvdtwoname, mvdfirstrang, mvdtworang -->
+		<div id="mvd" style="display: none">
+			<img class="bg" src="images/bg.png" alt>
+			<div class="content">
+				<img id="mvdavatar" class="avatar" src="images/228.png" alt>
+				<div class="all-divs">
+					<div class="left-div">
+						<div id="mvdnumberudost" class="number-udost">123456</div>
+						<div class="all-divs position">
+							<div id="mvdnumber" class="number">42465</div>
+							<div class="date"><span id="mvdday">27</span>.<span id="mvdmonth">03</span>.20<span id="mvdyear">24</span></div>
+						</div>
+					</div>
+					<div class="right-div">
+						<div id="mvdnumberudost" class="second-number">123456</div>
+						<div class="name-div">
+							<div id="mvdfamily">ЗУБЕНКО</div>
+							<div id="mvdname">КОНСТАНТИН</div>
+							<div id="mvdtwoname">АНДРЕЕВИЧ</div>
+						</div>
+						<div id="mvdfirstrang" class="rang">Старший лейтенант полиции</div>
+						<div id="mvdtworang" class="two-rang">Бедолага и дизайнер GreenTech'a города Южный</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 		document.getElementById('MChS').style.display = "block";
+		document.getElementById('avatar').src=`img/documents/passport/skins/${avatar}.png`
+		document.getElementById('numberudost').innerText = `${numberudost}`;
+		document.getElementById('date').innerText = `${date}`;
+		document.getElementById('surname').innerText = `${surname}`;
+		document.getElementById('name').innerText = `${name} ${patronymic}`;
+		document.getElementById('rang').innerText = `${rang}`;
+		document.getElementById('dategive').innerText = `${dategive}`; -->
+
+		<!--
+			avatar
+			numberudost
+			date
+			surname
+			name
+			patronymic
+			onerank
+			tworank
+			dategive
+		-->
+
+		<!-- prokuror, prokuroravatar, dopusk, prokurorudostoverenie, give-day-prokuror, give-month-prokuror, give-year-prokuror, date-day-prokuror, date-month-prokuror, date-year-prokuror, prokurorudostoverenie, prokurorrang -->
+		<div id="prokuror" style="display: none;">
+			<img class="prokuror-bg" src="images/background.jpg" alt>
+			<div class="prokurorcontent">
+				<img id="prokuroravatar" class="prokuror-avatar" src="images/141.png" alt>
+				<div id="dopusk" class="dopusk">к чему?</div>
+				<div class="prokuror-number">ТО №<span id="prokurorudostoverenie1">123456</span></div>
+				<div class="all-divs">
+					<div class="prokuror-left">
+						<div class="first-date-prokuror"><span id="givedayprokuror">7</span> <span id="givemonthprokuror">февраля</span><span class="year" id="giveyearprokuror">20</span></div>
+						<div class="two-date-prokuror"><span id="datedayprokuror">15</span> <span id="datemonthprokuror">августа</span><span id="dateyearprokuror" class="year">25</span></div>
+					</div>
+					<div class="prokuror-right">
+						<div class="prokuror-name">
+							<span id="prokuror-name1">Чемериський</span><br>
+							<span id="prokuror-name2">Клоун</span> 
+							<span id="prokuror-name3">Клоун</span>
+						</div>
+						<div class="prokuror-number-right">ТО №<span id="prokurorudostoverenie2">123456</span></div>
+						<div class="prokuror-rang" id="prokurorrang">Как гласит легенда, Игорь лох, мы его любим</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- sudavatar, sudday, sudmonth, sudyear, sudnumber, sudfamily, sudname, sudnoname, sudrang -->
+		<div id="sud" style="display: none;"> 
+			<img class="sudbg" src="images/bg.jpg" alt>
+			<div class="sud-content"> 
+				<img id="sudavatar" class="sud-avatar" src="images/102.png" alt>
+				<div class="all-divs">
+					<div class="sud-left">
+						<div class="sudDate"><span id="sudday">15</span>.<span id="sudmonth">03</span>.20<span id="sudyear">22</span></div>
+					</div>
+					<div class="sud-right">
+						<div class="sud-number" id="sudnumber">483</div>
+						<div class="sud-family" id="sudfamily">ЗУБЕНКО</div>
+						<div class="sud-name"><span id="sudname">МИХАИЛ</span> <span id="sudnoname">ПЕТРОВИЧ</span></div>
+
+						<div class="sud-rang" id="sudrang">дизайнер плохой человек</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mchs" style="display: none;">
+			<img src="images/background.png" alt class="mdiv">
+			<div class="m-content">
+				<img id="mavatar" src="images/10.png" alt class="m-photo">
+				<div class="all-divs">
+					<div class="m-left">
+						<div class="m-number-udost" id="mnumberudost">001967</div>
+						<div class="m-date"><span id="mdate">13</span><span id="mmount" class="m-mount">декабря</span><span class="m-year" id="myear">25</span></div>
+					</div>
+					<div class="m-right">
+						<div class="m-number-udost-r" id="mnumberudost">001976</div>
+						<div class="m-nickname"><span id="msurname">ЗУБЕНКО</span><br><span id="mname">Михаил</span> <span id="mpatronymic">Петрович</span></div>
+						<div class="m-rang"><span id="monerank">Старший прапорщик</span><br><span id="mtworank">Командир пожарного расчёта</span></div>
+						<div class="m-date-r"><span id="mdategive">07</span><span id="mdategivemount" class="m-mount-r">февраля</span><span class="m-year-r" id="mdategiveyear">22</span></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div id="vu" style="display: none;">
+			<img src="images/bg_1.png" alt="bg.png" class="bg">
+			<div class="content">
+				<div id="vusurname" class="surname">ЗУБЕНКО</div>
+				<div id="vusurnametranslate" class="surname translate">ZUBENKO</div>
+				<div id="vuname" class="name">МИХАИЛ</div>
+				<div id="vunametranslate" class="name translate">MICHAEL</div>
+				<div id="vuborndate" class="borndate">01.01.1970</div>
+				<!-- vusurname vusurnametranslate vuname vunametranslate vuborndate vub vuc vud vuavatar -->
+				<div class="bornplace">НИЖЕГОРОДСКАЯ ОБЛ.</div>
+				<div class="bornplace translate">NIZHEGORODSKAYA OBL.</div>
+				<div class="from">05.11.2026</div>
+				<div class="to">05.11.2016</div>
+				<div class="place">ГИБДД 5233</div>
+				<div class="place translate">GIBDD 5233</div>
+				<div class="number">86 53 842521</div>
+				<div class="obl">НИЖЕГОРОДСКАЯ ОБЛ.</div>
+				<div class="obl translate">NIZHEGORODSKAYA OBL.</div>
+				<ul class="categories">
+					<li id="vua" class="category" style="display: none;">A</li>
+					<li id="vub" class="category" style="display: none;">B</li>
+					<li id="vuc" class="category" style="display: none;">C</li>
+					<li id="vud" class="category" style="display: none;">D</li>
+				</ul>
+				<img id="vuavatar" src="images/1.png" alt="photo" class="photo">
+				<img src="images/sign_1.png" alt class="sign">
+			</div>
+		</div>
+		<div id="sk" style="display: none;">
+			<img src="images/bg_2.png" alt="bg">
+			<div class="content">
+				<img id="skavatar" src="images/photo.png" alt="photo" class="avatar">
+				<div id="sknumber" class="personal-number">155124</div>
+				<div id="skday" class="givenday">9</div>
+				<div id="skmonth" class="givenmonth">ноября</div>
+				<div id="skyear" class="givenyear">21</div>
+				<div id="sktoday" class="uptoday">15</div>
+				<div id="sktomonth" class="uptomonth">мая</div>
+				<div id="sktoyear" class="uptoyear">25</div>
+				<div class="sk-name">
+					<span id="sk-name1">Чемериський</span><br>
+					<span id="sk-name2">Клоун</span> 
+					<span id="sk-name3">Клоун</span><br><br>
+					<span id="sk-rank">Главный гей на районе</span>
+				</div>
+			</div>
+		</div>
+		<!-- color-picker -->
+		<div id="color-selector" style="display: none;">
+            <div class="color-selector-title">Покраска автомобиля</div>
+			<div class="color-selector-price">Стоимость: <span id="cs_price">500 ₽</span></div>
+			<div class="color-selector-content">
+				<div class="color-selector-left">
+					<div id="cs_palette" class="color-selector-btn cs_selected" onclick="selectPaletteType(0)"></div>
+					<div id="cs_picker" class="color-selector-btn" onclick="selectPaletteType(1)"></div>
+					<div class="color-selector-line"></div>
+					<div id="cs_accept" class="color-selector-btn" onclick="colorResponse(1)"></div>
+					<div id="cs_cancel" class="color-selector-btn" onclick="colorResponse(0)"></div>
+				</div>
+				<div class="color-selector-right">
+					<div id="cs_palette_box" class="color-selector-palette">
+						<!-- заполняется через initColorPalette() -->
+					</div>
+					<div id="cs_picker_box" style="display: none;">
+						<input id="color-picker" value="#ffffff">
+					</div>
+				</div>
+			</div>
+        </div>
+		<!-- -->
+		<div id="government" style="display: none;">
+			<img id="government-photo" src="images/94.png">
+			<div class="government-info">
+				<span id="government-number">УДОСТОВЕРЕНИЕ № 1337</span><br><br>
+				<span id="government-lastname">Чемериський</span><br>
+				<span id="government-firstname">Юрий</span> <span id="government-fathername">Максимович</span><br><br>
+				<span id="government-rank">Главный лошок на GAYTECH РолеПлей</span>
+			</div>
+		</div>
+	</div>
+
+<script>
+	const COLORPICKER_TICK = 10;
+
+	var cs_palette_index = -1,
+		cs_picker_tick = 0,
+		cs_last_color = [
+			[255, 255, 255],
+			[255, 255, 255]
+		];
+
+	// color-picker
+
+	var color_palette = [
+		[255, 255, 255],
+		[209, 211, 212],
+		[128, 130, 133],
+		[255, 156, 161],
+		[226, 3, 56],
+		[180, 10, 27],
+		[128, 240, 255],
+		[23, 113, 241],
+		[35, 0, 176],
+		[118, 254, 197],
+		[0, 207, 145],
+		[0, 65, 86],
+		[109, 110, 113],
+		[65, 64, 66],
+		[0, 0, 0],
+		[85, 107, 47],
+		[255, 69, 0],
+		[218, 165, 32],
+		[138, 43, 226],
+		[128, 0, 128],
+		[139, 69, 19],
+		[255, 228, 181],
+		[127, 255, 0],
+		[250, 128, 114]
+	];
+
+	function colorCallback(r, g, b, type = 0) {
+		if(type) {
+			if(++cs_picker_tick < COLORPICKER_TICK) {
+				return;
+			}
+			else {
+				cs_picker_tick = 0;
+			}
+		}
+
+		cs_last_color[type][0] = r;
+		cs_last_color[type][1] = g;
+		cs_last_color[type][2] = b;
+
+		cef.emit("interface:colorpicker:color", r, g, b);
+	}
+
+	function colorResponse(response) {
+		cef.emit("interface:colorpicker:response", response);
+	}
+
+	function showColorPicker(show) {
+		document.getElementById('color-selector').style.display = (show) ? 'block' : 'none';
+
+		if(show) {
+			initColorPalette();
+			selectPaletteType(1);
+		}
+	}
+
+	function initColorPalette() {
+		var palette_html = '';
+
+		for(var idx = 0; idx < color_palette.length; idx++) {
+			var color = color_palette[idx];
+
+			palette_html += `
+				<div class="color-selector-paint"
+				style="background-color: rgb(${color[0]}, ${color[1]}, ${color[2]})"
+				onclick="selectColorPalette(${idx})"></div>`;
+		}
+
+		document.getElementById('cs_palette_box').innerHTML = palette_html;
+
+		selectColorPalette(0);
+	}
+
+	function selectColorPalette(index) {
+		var paint_elem = document.getElementsByClassName('color-selector-paint');
+
+		if(cs_palette_index != -1) {
+			paint_elem[cs_palette_index].classList.toggle('cs_selected', 0);
+		}
+
+		paint_elem[index].classList.toggle('cs_selected', 1);
+		cs_palette_index = index;
+
+		colorCallback(color_palette[index][0], color_palette[index][1], color_palette[index][2])
+	}
+
+	function selectPaletteType(type) {
+		var palette_elem = document.getElementById('cs_palette_box'),
+			picker_elem = document.getElementById('cs_picker_box');
+
+		palette_elem.style.display = (type) ? 'none' : 'grid';
+		picker_elem.style.display = (type) ? 'block' : 'none';
+
+		document.getElementById('cs_palette').classList.toggle('cs_selected', (!type));
+		document.getElementById('cs_picker').classList.toggle('cs_selected', (type));
+
+		colorCallback(cs_last_color[type][0], cs_last_color[type][1], cs_last_color[type][2], type);
+	}
+
+	$("#color-picker").spectrum({ flat: true, allowEmpty: !1, showAlpha: false, showPallete: false }),
+		(window.onload = function () {
+			var e = $(".scroll");
+			e.mousedown(function () {
+				var i = this.scrollLeft + event.pageX;
+				e.mousemove(function () {
+					return (this.scrollLeft = i - event.pageX), !1;
+				});
+			}),
+				$(window).mouseup(function () {
+					e.off("mousemove");
+				});
+		});
+
+	// ---
+
+
+	function showGov(skin, number, name1, name2, name3, rank) {
+		document.getElementById('government').style.display = 'block';
+
+		document.getElementById('government-number').innerText = `УДОСТОВЕРЕНИЕ № ${number}`;
+		document.getElementById('government-lastname').innerText = `${name1}`;
+		document.getElementById('government-firstname').innerText = `${name2}`;
+		document.getElementById('government-fathername').innerText = `${name3}`;
+
+		document.getElementById('government-rank').innerText = `${rank}`;
+		
+		document.getElementById('government-photo').src = `img/documents/passport/skins/${skin}.png`;
+	}
+
+	function hideGov() {
+		document.getElementById('government').style.display = 'none';
+	}
+
+
+	function showSK(skin, number, name1, name2, name3, rank){
+		document.getElementById('sk').style.display = "block";
+		document.getElementById('skavatar').src=`img/documents/passport/skins/${skin}.png`;
+		document.getElementById('sknumber').innerText = `${number}`;
+
+		document.getElementById('sk-name1').innerText = `${name1}`;
+		document.getElementById('sk-name2').innerText = `${name2}`;
+		document.getElementById('sk-name3').innerText = `${name3}`;
+		
+		document.getElementById('sk-rank').innerText = `${rank}`;
+	}
+
+	function hideSK(){
+		document.getElementById('sk').style.display = "none";
+	}
+
+	/*
+				avatar
+			numberudost
+			date
+			surname
+			name
+			patronymic
+			onerank
+			tworank
+			dategive
+	*/
+/*
+						mdate
+						mmount
+						myear
+
+						mdategive
+						mdategivemount
+						mdategiveyear
+*/
+	function showMED(medavatar, meddata, medsurname, medname, medbirthdate, medaddress, meddolsh, medorg){
+		document.getElementById('medical').style.display = "block";
+		document.getElementById('medavatar').src=`img/documents/passport/skins/${medavatar}.png`;
+		document.getElementById('meddata').innerText = `${meddata}`;
+
+		document.getElementById('medsurname').innerText = `${medsurname}`;
+		document.getElementById('medname').innerText = `${medname}`;
+		document.getElementById('medbirthdate').innerText = `${medbirthdate}`;
+
+		document.getElementById('medaddress').innerText = `${medaddress}`;
+		document.getElementById('meddolsh').innerText = `${meddolsh}`;
+		document.getElementById('medorg').innerText = `${medorg}`;
+	}
+
+	function hideMED(){
+		document.getElementById('medical').style.display = "none";
+	}
+
+	// vusurname vusurnametranslate vuname vunametranslate vuborndate vub vuc vud vuavatar
+	function showVU(vusurname, vuname, vuborndate, vua, vub, vuc, vud, vuavatar){
+		document.getElementById('vu').style.display = "block";
+		document.getElementById('vusurname').innerText = `${vusurname}`;
+
+		var vusurnametranslate = translit(vusurname)
+		document.getElementById('vusurnametranslate').innerText = `${vusurnametranslate}`;
+
+		document.getElementById('vuname').innerText = `${vuname}`;
+
+		var vunametranslate = translite(vuname)
+		document.getElementById('vunametranslate').innerText = `${vunametranslate}`;
+		document.getElementById('vuborndate').innerText = `${vuborndate}`;
+
+		if(vua == 1){
+			document.getElementById('vua').style.display = "block";
+		}
+		if(vub == 1){
+			document.getElementById('vub').style.display = "block";
+		}
+		if(vuc == 1){
+			document.getElementById('vuc').style.display = "block";
+		}
+		if(vud == 1){
+			document.getElementById('vud').style.display = "block";
+		}
+
+		document.getElementById('vuavatar').src=`img/documents/passport/skins/${vuavatar}.png`
+	}
+
+	function hideVU(){
+		document.getElementById('vu').style.display = "none";
+		document.getElementById('vua').style.display = "none";
+		document.getElementById('vub').style.display = "none";
+		document.getElementById('vuc').style.display = "none";
+		document.getElementById('vud').style.display = "none";
+		trans = '';
+	}
+
+	function showSUD(sudavatar, sudday, sudmonth, sudyear, sudnumber, sudfamily, sudname, sudnoname, sudrang){
+		document.getElementById('sud').style.display = "block";
+		document.getElementById('sudavatar').src =`img/documents/passport/skins/${sudavatar}.png`
+		document.getElementById('sudday').innerText = `${sudday}`;
+
+		document.getElementById('sudmonth').innerText = `${sudmonth}`;
+		document.getElementById('sudyear').innerText = `${sudyear}`;
+		document.getElementById('sudnumber').innerText = `${sudnumber}`;
+
+		document.getElementById('sudfamily').innerText = `${sudfamily}`;
+		document.getElementById('sudname').innerText = `${sudname}`;
+		document.getElementById('sudnoname').innerText = `${sudnoname}`;
+		document.getElementById('sudrang').innerText = `${sudrang}`;
+	}
+
+	function hideSUD() {
+		document.getElementById('sud').style.display = "none";
+	}
+
+
+	function showMVD(mvdavatar, mvdnumberudost, mvdnumber, mvdday, mvdmonth, mvdyear, mvdfamily, mvdname, mvdtwoname, mvdfirstrang, mvdtworang) {
+		document.getElementById('mvd').style.display = "block";
+		document.getElementById('mvdavatar').src = `img/documents/passport/skins/${mvdavatar}.png`;
+		document.getElementById('mvdnumberudost').innerText = `${mvdnumberudost}`;
+
+		document.getElementById('mvdnumber').innerText = `${mvdnumber}`;
+		document.getElementById('mvdday').innerText = `${mvdday}`;
+		document.getElementById('mvdmonth').innerText = `${mvdmonth}`;
+
+		document.getElementById('mvdyear').innerText = `${mvdyear}`;
+		document.getElementById('mvdfamily').innerText = `${mvdfamily}`;
+		document.getElementById('mvdname').innerText = `${mvdname}`;
+
+		document.getElementById('mvdtwoname').innerText = `${mvdtwoname}`;
+		document.getElementById('mvdfirstrang').innerText = `${mvdfirstrang}`;
+		document.getElementById('mvdtworang').innerText = `${mvdtworang}`;
+	}
+
+	function hideMVD(){
+		document.getElementById('mvd').style.display = "none";
+	}
+
+
+	function showPROKUROR(skin, number, name1, name2, name3, dopusk, rank) {
+		document.getElementById('prokuror').style.display = "block";
+		document.getElementById('prokuroravatar').src =`img/documents/passport/skins/${skin}.png`
+		document.getElementById('dopusk').innerText = `${dopusk}`;
+
+		document.getElementById('prokurorudostoverenie1').innerText = `${number}`;
+		document.getElementById('prokurorudostoverenie2').innerText = `${number}`;
+
+		document.getElementById('prokuror-name1').innerText = `${name1}`;
+		document.getElementById('prokuror-name2').innerText = `${name2}`;
+		document.getElementById('prokuror-name3').innerText = `${name3}`;
+
+		document.getElementById('givedayprokuror').innerText = `13`;
+		document.getElementById('givemonthprokuror').innerText = `марта`;
+		document.getElementById('giveyearprokuror').innerText = `21`;
+
+		document.getElementById('datedayprokuror').innerText = `13`;
+		document.getElementById('datemonthprokuror').innerText = `апреля`;
+		document.getElementById('dateyearprokuror').innerText = `25`;
+
+		document.getElementById('prokurorrang').innerText = `${rank}`;
+	}
+
+	function hidePROKUROR(){
+		document.getElementById('prokuror').style.display = "none";
+	}
+
+	function showMChS(mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear){
+		
+		document.getElementById('mchs').style.display = "block";
+		document.getElementById('mavatar').src=`img/documents/passport/skins/${mavatar}.png`
+		document.getElementById('mnumberudost').innerText = `${mnumberudost}`;
+
+		document.getElementById('mdate').innerText = `${mdate}`;
+		document.getElementById('mmount').innerText = `${mmount}`;
+		document.getElementById('myear').innerText = `${myear}`;
+
+		document.getElementById('msurname').innerText = `${msurname}`;
+		document.getElementById('mname').innerText = `${mname}`;
+		document.getElementById('mpatronymic').innerText = `${mpatronymic}`;
+		document.getElementById('monerank').innerText = `${monerank}`;
+		document.getElementById('mtworank').innerText = `${mtworank}`;
+
+		document.getElementById('mdategive').innerText = `${mdategive}`;
+		document.getElementById('mdategivemount').innerText = `${mdategivemount}`;
+		document.getElementById('mdategiveyear').innerText = `${mdategiveyear}`;
+	}
+
+	function hideMChS(mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear){
+		document.getElementById('mchs').style.display = "none";
+	}
+
+	function showPassport(surname, name, patronymic, sex, birthdate, avatar){
+		translit(surname+name+patronymic);
+		document.getElementById('passport').style.display = "block";
+		document.getElementById('surname').innerText = `${surname}`;
+		document.getElementById('name').innerText = `${name}`;
+		document.getElementById('patronymic').innerText = `${patronymic}`;
+		document.getElementById('sex').innerText = `${sex}`;
+		document.getElementById('birthdate').innerText = `${birthdate}`;
+		document.getElementById('avatar').src=`img/documents/passport/skins/${avatar}.png`
+		document.getElementById('translatePassport').innerText = `${trans}`
+	}
+
+	function hidePassport(surname, name, patronymic, sex, birthdate, avatar){
+		document.getElementById('passport').style.display = "none";
+		trans = '';
+	}
+
+	var turn_left = false,
+	turn_right = false,
+	turn_signal_timer = null;
+
+	function setBar(type, value) {
+		var progress_value = value;
+
+		if(progress_value > 100) {
+			progress_value = 100;
+		}
+
+		document.getElementById(`progress_${type}`).style = `width: calc(${progress_value}% - 0.4vw)`;
+		document.getElementById(`text_${type}`).innerText = `${Math.round(value)}`;
+	}
+
+	function cleanNeedClasses(element) {
+		element.classList.remove('short_low');
+		element.classList.remove('short_normal');
+		element.classList.remove('short_good');
+		element.classList.remove('short_high');
+	}
+
+	function setNeed(type, value) {
+		if(value < 0) {
+			value = 0;
+		}
+
+		var bar_status = 'low';
+
+		if(value >= 80) {
+			bar_status = 'high';
+		}
+		else if(value >= 50) {
+			bar_status = 'good';
+		}
+		else if(value >= 25) {
+			bar_status = 'normal';
+		}
+
+		var bar_elem = document.getElementById(`need_${type}`);
+
+		cleanNeedClasses(bar_elem);
+
+		bar_elem.classList.add(`short_${bar_status}`);
+		document.getElementById(`text_${type}`).innerText = `${value}`;
+	}
+
+	function showInterface(interface, show) {
+		if(isInterfaceHidden(interface) !== undefined) {
+			var interface_elem = document.getElementById(interface);
+
+			interface_elem.hidden = !show;
+			
+			if(show) {
+				interface_elem.style = '';
+			}
+			else {
+				interface_elem.style = `display: none`;
+			}
+		}
+	}
+
+	function showTransmission(type, show) {
+		if(type == 'manual' || type == 'automatic') {
+			var display_type = 'none';
+
+			if(show) {
+				display_type = 'block';
+			}
+
+			document.getElementById(`transmission_${type}`).style = `display: ${display_type}`;
+
+			clearTransmissionGears(type);
+		}
+	}
+
+	function setSpeedIcon(type, value) {
+		var icon_elem = document.getElementById(`flag_${type}`);
+
+		if(icon_elem !== null) {
+			icon_elem.classList.remove('active');
+
+			if(Boolean(value)) {
+				icon_elem.classList.add('active');
+			}
+		}
+	}
+
+	function getWeaponImage(weaponid) {
+		switch(weaponid) {
+			case 1:
+			return 'kast';
+			break;
+			case 3:
+			return 'dubina';
+			break;
+			case 4:
+			return 'knife';
+			break;
+			case 5:
+			return 'bita';
+			break;
+			case 9:
+			return 'pila';
+			break;				
+			case 23:
+			return 'silenced';
+			break;
+			case 24:
+			return 'makarov';
+			break;
+			case 29:
+			return 'aksu';
+			break;
+			case 30:
+			return 'ak';
+			break;
+			case 31:
+			return 'akm';
+			break;
+			case 34:
+			return 'svd';
+			break;
+			case 41:
+			return 'spr';
+			break;
+			case 42:
+			return 'fire';
+			break;
+			case 43:
+			return 'cam';
+			break;
+			case 46:
+			return 'par';
+			break;	
+			default:
+			return 'fist';
+		}
+	}
+
+	function setSpeedCircle(speed) {
+		var speed_value = Math.round((188.25 / 240) * speed);
+
+		document.getElementById('speed_circle').style = `stroke-dasharray: ${speed_value}% 500%;`;
+	}
+
+	function isInterfaceHidden(interface) {
+		var interface_elem = document.getElementById(interface);
+
+		if(interface_elem !== null) {
+			return interface_elem.hidden;
+		}
+		else {
+			return undefined;
+		}
+	}
+
+	function moneyFormat(number) {
+		var text_fmt = `${number}`;
+		var text_tmp = text_fmt;
+		var text_len = text_fmt.length;
+
+		var dots_count = 0;
+
+		for(var idx = 0; idx < (text_len - 1); idx++) {
+			if(text_tmp[idx] == '.') {
+				continue;
+			}
+
+			if(((text_len - (idx + 1)) % 3) == 0) {
+				dots_count++;
+
+				text_tmp = text_tmp.slice(0, idx + dots_count) + '.' + text_tmp.slice(idx + dots_count);
+			}
+		}
+
+		return text_tmp;
+	}
+
+	function dateTimeFormat(number) {
+		if(number < 10) {
+			number = '0' + number;
+		}
+
+		return ('' + number);
+	}
+
+	function updateDateTime() {
+		var date = new Date();
+
+		var day = dateTimeFormat(date.getDate());
+		var month = dateTimeFormat(date.getMonth() + 1);
+		var year = dateTimeFormat(date.getFullYear());
+
+		var hours = dateTimeFormat(date.getHours());
+		var minutes = dateTimeFormat(date.getMinutes());
+
+		var time_elem = document.querySelector('#date .time span');
+		var date_elem = document.querySelector('#date .date span');
+
+		date_elem.innerText = `${day}.${month}.${year}`;
+		time_elem.innerText = `${hours}:${minutes}`;
+	}
+
+	function turnLightsHandler() {
+		if(turn_left) {
+			document.getElementById(`turn_signal_left`).classList.toggle('active');
+		}
+
+		if(turn_right) {
+			document.getElementById(`turn_signal_right`).classList.toggle('active');
+		}
+
+		if(Boolean(turn_left) == false && Boolean(turn_right) == false) {
+			clearInterval(turn_signal_timer);
+			turn_signal_timer = null;
+		}
+	}
+
+	function setTurnLight(type, value) {
+		if(type == 'left' || type == 'right') {
+			if(turn_signal_timer == null && Boolean(value) == true) {
+				turn_signal_timer = setInterval(turnLightsHandler, 400);
+			}
+
+			if(type == 'left') {
+				turn_left = Boolean(value);
+			}
+			else {
+				turn_right = Boolean(value);
+			}
+
+			document.getElementById(`turn_signal_${type}`).classList.remove('active');
+
+			if(Boolean(value) == true) {
+				document.getElementById(`turn_signal_${type}`).classList.add('active');
+			}
+		}
+	}
+
+	function clearTransmissionGears(type) {
+		if(type == 'manual' || type == 'automatic') {
+			var gear_list = document.getElementById(`transmission_${type}`).getElementsByClassName('gear');
+
+			for(var idx = 0; idx < gear_list.length; idx++) {
+				gear_list[idx].classList.remove('active');
+			}
+		}
+	}
+
+	function setTransmissionGear(type, gear) {
+		if(type == 'train') {
+			document.querySelector("#train_transmission").classList.remove("forward");
+			document.querySelector("#train_transmission").classList.remove("back");
+			let cls = "";
+			if(gear == 'n') cls = "";
+			if(gear == 'r') cls = "back";
+			if(gear == 'd') cls = "forward";
+			document.querySelector("#train_transmission").classList.add(cls);
+		}
+		if(type == 'manual' || type == 'automatic') {
+			clearTransmissionGears(type);
+
+			var gear_elem = document.getElementById(`t${type[0]}_gear_${gear}`);
+
+			if(gear_elem !== null) {
+				gear_elem.classList.add('active');
+			}
+		}
+	}
+
+	// every minute timer
+	setInterval(() => {
+		updateDateTime();
+	}, 60 * 1000);
+
+var trans = '';
+
+function test(){
+  
+  translit(test);
+  alert(trans);
+}
+
+function translit(word){
+  var converter = {
+    'а': 'A',    'б': 'B',    'в': 'V',    'г': 'G',    'д': 'D',
+    'е': 'E',    'ё': 'E',    'ж': 'ZH',   'з': 'Z',    'и': 'I',
+    'й': 'Y',    'к': 'K',    'л': 'L',    'м': 'M',    'н': 'N',
+    'о': 'O',    'п': 'P',    'р': 'R',    'с': 'S',    'т': 'T',
+    'у': 'U',    'ф': 'F',    'х': 'H',    'ц': 'C',    'ч': 'CH',
+    'ш': 'SH',   'щ': 'SCH',  'ь': '',     'ы': 'Y',    'ъ': '',
+    'э': 'E',    'ю': 'YU',   'я': 'YA',
+ 
+    'А': 'A',    'Б': 'B',    'В': 'V',    'Г': 'G',    'Д': 'D',
+    'Е': 'E',    'Ё': 'E',    'Ж': 'ZH',   'З': 'Z',    'И': 'I',
+    'Й': 'Y',    'К': 'K',    'Л': 'L',    'М': 'M',    'Н': 'N',
+    'О': 'O',    'П': 'P',    'Р': 'R',    'С': 'S',    'Т': 'T',
+    'У': 'U',    'Ф': 'F',    'Х': 'H',    'Ц': 'C',    'Ч': 'CH',
+    'Ш': 'SH',   'Щ': 'SCH',  'Ь': '',     'Ы': 'Y',    'Ъ': '',
+    'Э': 'E',    'Ю': 'YU',   'Я': 'YA'
+  };
+ 
+  for (var i = 0; i < word.length; ++i ) {
+    if (converter[word[i]] == undefined){
+      trans += word[i];
+    } else {
+      trans += converter[word[i]];
+    }
+  }
+ 
+  return trans;
+}
+
+var result = '';
+
+function translite(word){
+	var conv = {
+    'а': 'A',    'б': 'B',    'в': 'V',    'г': 'G',    'д': 'D',
+    'е': 'E',    'ё': 'E',    'ж': 'ZH',   'з': 'Z',    'и': 'I',
+    'й': 'Y',    'к': 'K',    'л': 'L',    'м': 'M',    'н': 'N',
+    'о': 'O',    'п': 'P',    'р': 'R',    'с': 'S',    'т': 'T',
+    'у': 'U',    'ф': 'F',    'х': 'H',    'ц': 'C',    'ч': 'CH',
+    'ш': 'SH',   'щ': 'SCH',  'ь': '',     'ы': 'Y',    'ъ': '',
+    'э': 'E',    'ю': 'YU',   'я': 'YA',
+ 
+    'А': 'A',    'Б': 'B',    'В': 'V',    'Г': 'G',    'Д': 'D',
+    'Е': 'E',    'Ё': 'E',    'Ж': 'ZH',   'З': 'Z',    'И': 'I',
+    'Й': 'Y',    'К': 'K',    'Л': 'L',    'М': 'M',    'Н': 'N',
+    'О': 'O',    'П': 'P',    'Р': 'R',    'С': 'S',    'Т': 'T',
+    'У': 'U',    'Ф': 'F',    'Х': 'H',    'Ц': 'C',    'Ч': 'CH',
+    'Ш': 'SH',   'Щ': 'SCH',  'Ь': '',     'Ы': 'Y',    'Ъ': '',
+    'Э': 'E',    'Ю': 'YU',   'Я': 'YA'
+  };
+ 
+  for (var i = 0; i < word.length; ++i ) {
+    if (conv[word[i]] == undefined){
+		result += word[i];
+    } else {
+		result+= conv[word[i]];
+    }
+  }
+ 
+  return result;
+}
+
+	//if(typeof cef !== 'undefined') {
+		cef.emit("game:hud:setComponentVisible", "interface", false);
+		
+		cef.emit("game:data:pollPlayerStats", true, 150);
+
+		cef.on("game:data:playerStats", (hp, max_hp, arm, breath, wanted, weapon, ammo, max_ammo, money, speed) => {
+			setBar('health', hp);
+			setBar('armour', arm);
+
+			var weapon_img = getWeaponImage(weapon);
+			var ammo_text = '';
+
+			if(weapon_img !== 'fist') {
+				ammo_text = `${ammo}-${(max_ammo-ammo)}`;
+			}
+
+			document.getElementById('img_weapon').src = `img/weapon_${weapon_img}.png`;
+			document.getElementById('text_ammo').innerText = ammo_text;
+
+			document.getElementById('text_cash').innerText = `${moneyFormat(money)} ₽`;
+
+			if(!isInterfaceHidden('car')) {
+				var game_speed = Math.round(speed * 1.4);
+
+				document.getElementById('text_speed').innerText = `${game_speed}`;
+				setSpeedCircle(game_speed);
+			}
+			if(!isInterfaceHidden('train')) {
+				document.getElementById("train-speed").innerHTML = `${Math.round(speed * 1.4)}`;
+			}
+		});
+
+		cef.on('interface:set:icon', (type) => {
+			setSpeedIcon(type, true);
+		});
+
+		cef.on('interface:unset:icon', (type) => {
+			setSpeedIcon(type, false);
+		});
+
+		cef.on('interface:set:turnlight', (type, value) => {
+			setTurnLight(type, Boolean(parseInt(value)));
+		});
+
+		cef.on('interface:set:turn:left', (value) => {
+			setTurnLight('left', Boolean(parseInt(value)));
+		});
+
+		cef.on('interface:set:turn:right', (value) => {
+			setTurnLight('right', Boolean(parseInt(value)));
+		});
+
+		cef.on('interface:set:city', (city) => {
+			document.getElementById('text_city').innerText = city;
+		});
+
+		cef.on("interface:set:street", (street) => {
+			document.getElementById('text_street').innerText = street;
+		});
+
+		cef.on("interface:set:card", (card) => {
+			document.getElementById('text_card').innerText = `${moneyFormat(card)} ₽`;
+		});
+
+		cef.on('interface:set:need', (type, value) => {
+			if(type == 'food' || type == 'drink') {
+				setNeed(type, value);
+			}
+		});
+
+		cef.on('interface:set:fuel', (value) => {
+			document.getElementById('text_fuel').innerText = `${value.toFixed(1)}`;
+		});
+
+		cef.on('interface:set:mileage', (value) => {
+			document.getElementById('text_mileage').innerText = `${value} км`;
+		});
+
+		cef.on('interace:set:fuelmil', (fuel, mileage) => {
+			document.getElementById('text_fuel').innerText = `${fuel.toFixed(1)}`;
+			document.getElementById('text_mileage').innerText = `${mileage} км`;
+
+			if(fuel < 5) {
+				document.getElementById('fuel_icon').classList.add("active");
+				document.getElementById('text_fuel').classList.add("active");
+			} else {
+				document.getElementById('fuel_icon').classList.remove("active");
+				document.getElementById('text_fuel').classList.remove("active");
+			}
+		});
+
+		cef.on("interface:show", (name) => {
+			showInterface(name, true);
+		});
+
+		cef.on('interface:hide', (name) => {
+			showInterface(name, false);
+		});
+
+		cef.on('interface:showtrans', (name) => {
+			showTransmission(name, true);
+		});
+
+		cef.on('interface:hidetrans', (name) => {
+			showTransmission(name, false);
+		});
+
+		cef.on('interface:set:gear', (type, gear) => {
+			setTransmissionGear(type, gear);
+		});
+
+		cef.on('interface:set:showPassport', (surname, name, patronymic, sex, birthdate, avatar) => {
+			showPassport(surname, name, patronymic, sex, birthdate, avatar);
+		})
+
+		cef.on('interface:set:hidePassport', (surname, name, patronymic, sex, birthdate, avatar) => {
+			hidePassport(surname, name, patronymic, sex, birthdate, avatar);
+		})
+
+		cef.on('interface:set:showMChS', (mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear) => {
+			showMChS(mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear);
+		})
+
+		cef.on('interface:set:hideMChS', (mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear) => {
+			hideMChS(mavatar, mnumberudost, mdate,  mmount, myear, msurname, mname, mpatronymic, monerank, mtworank, mdategive,  mdategivemount,  mdategiveyear);
+		})
+
+		cef.on('interface:set:showMED', (medavatar, meddata, medsurname, medname, medbirthdate, medaddress, meddolsh, medorg) => {
+			showMED(medavatar, meddata, medsurname, medname, medbirthdate, medaddress, meddolsh, medorg);
+		})
+
+		cef.on('interface:set:hideMED', () => {
+			hideMED();
+		})
+
+		cef.on('interface:set:showVU', (vusurname, vuname, vuborndate, vua, vub, vuc, vud, vuavatar) => {
+			showVU(vusurname, vuname, vuborndate, vua, vub, vuc, vud, vuavatar);
+		})
+
+		cef.on('interface:set:hideVU', () => {
+			hideVU();
+		})
+
+		cef.on('interface:set:showSK', (skin, number, name1, name2, name3, rank) => {
+			showSK(skin, number, name1, name2, name3, rank);
+		})
+
+		cef.on('interface:set:hideSK', () => {
+			hideSK();
+		})
+
+		cef.on('interface:set:showPROKUROR', (skin, number, name1, name2, name3, dopusk, rank) =>{
+			showPROKUROR(skin, number, name1, name2, name3, dopusk, rank);
+		})
+
+		cef.on('interface:set:hidePROKUROR', () =>{
+			hidePROKUROR();
+		})
+
+		cef.on('interface:set:showGov', (skin, number, name1, name2, name3, rank) =>{
+			showGov(skin, number, name1, name2, name3, rank);
+		})
+
+		cef.on('interface:set:hideGov', () =>{
+			hideGov();
+		})
+
+		//
+		cef.on('interface:set:showMVD', (mvdavatar, mvdnumberudost, mvdnumber, mvdday, mvdmonth, mvdyear, mvdfamily, mvdname, mvdtwoname, mvdfirstrang, mvdtworang) => {
+			showMVD(mvdavatar, mvdnumberudost, mvdnumber, mvdday, mvdmonth, mvdyear, mvdfamily, mvdname, mvdtwoname, mvdfirstrang, mvdtworang);
+		})
+
+		cef.on('interface:set:hideMVD', () => {
+			hideMVD();
+		})
+
+		cef.on('interface:set:showSUD', (sudavatar, sudday, sudmonth, sudyear, sudnumber, sudfamily, sudname, sudnoname, sudrang) => {
+			showSUD(sudavatar, sudday, sudmonth, sudyear, sudnumber, sudfamily, sudname, sudnoname, sudrang);
+		})
+
+		cef.on('interface:set:hideSUD', () => {
+			hideSUD();
+		})
+
+		cef.on('interface:show:colorpicker', (price) => {
+			showColorPicker(true);
+
+			document.getElementById('cs_price').innerHTML = `${moneyFormat(price)} ₽`;
+		})
+
+		cef.on('interface:hide:colorpicker', () => {
+			showColorPicker(false);
+		})
+		//sudavatar, sudday, sudmonth, sudyear, sudnumber, sudfamily, sudname, sudnoname, sudrang
+
+//skavatar, sknumber, skday, skmonth, skyear, sktoday, sktomonth, sktoyear
+		//vusurname, vusurnametranslate, vuname, vunametranslate, vuborndate, vub, vuc, vud, vuavatar
+		//function showMED(medavatar, meddata, medsurname, medname, medbirthdate, medaddress, meddolsh, medorg){
+	//}
+</script>
+</div></body></html>
