@@ -1431,17 +1431,23 @@ cef.on("interface:update:fuel", (amount) => {
 
 // Обработка Фар
 cef.on("interface:update:light", (state) => {
-    // Ищем иконку фар (обычно 1-я или 2-я в списке flags)
-    let lightIcon = document.querySelector('.speedometer .flags .flag:nth-child(1)'); 
-    if(state > 0) lightIcon.classList.add('active'); // Загорится синим
-    else lightIcon.classList.remove('active');       // Потухнет (станет серым)
+    let icon = document.getElementById('flag_light');
+    if(state > 0) icon.classList.add('active'); 
+    else icon.classList.remove('active');
 });
 
-// Обработка Двигателя (Check Engine)
+// Обработка Двигателя
 cef.on("interface:update:engine", (state) => {
-    let engineIcon = document.querySelector('.speedometer .flags .flag:nth-child(3)');
-    if(state > 0) engineIcon.classList.add('active');
-    else engineIcon.classList.remove('active');
+    let icon = document.getElementById('flag_engine');
+    if(state > 0) icon.classList.add('active');
+    else icon.classList.remove('active');
+});
+
+// Обработка Замка (Двери)
+cef.on("interface:update:lock", (state) => {
+    let icon = document.getElementById('flag_lock');
+    if(state > 0) icon.classList.add('active');
+    else icon.classList.remove('active');
 });
 	
 });
