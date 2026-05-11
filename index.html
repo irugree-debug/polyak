@@ -1414,7 +1414,35 @@ function translite(word){
     if(speedText) speedText.innerText = speed;
     setSpeedCircle(speed);
 	
-	
+	// Обработка бензина
+cef.on("interface:update:fuel", (amount) => {
+    // Если у тебя есть текстовое поле для бензина
+    let fuelText = document.getElementById('text_fuel');
+    if(fuelText) fuelText.innerText = amount;
+    
+    // Если есть полоска бензина (делаем её тоже синей)
+    let fuelCircle = document.getElementById('fuel-circle');
+    if(fuelCircle) {
+        let maxFuel = 100; // Максимальный объем бака
+        let dash = (amount * 188.25) / maxFuel;
+        fuelCircle.style.strokeDasharray = `${dash}% 188.25%`;
+    }
+});
+
+// Обработка Фар
+cef.on("interface:update:light", (state) => {
+    // Ищем иконку фар (обычно 1-я или 2-я в списке flags)
+    let lightIcon = document.querySelector('.speedometer .flags .flag:nth-child(1)'); 
+    if(state > 0) lightIcon.classList.add('active'); // Загорится синим
+    else lightIcon.classList.remove('active');       // Потухнет (станет серым)
+});
+
+// Обработка Двигателя (Check Engine)
+cef.on("interface:update:engine", (state) => {
+    let engineIcon = document.querySelector('.speedometer .flags .flag:nth-child(3)');
+    if(state > 0) engineIcon.classList.add('active');
+    else engineIcon.classList.remove('active');
+});
 	
 });
 </script>
